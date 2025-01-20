@@ -1,0 +1,98 @@
+{
+  "options": [
+    {
+      "name": "help"
+    },
+    {
+      "name": "quiet"
+    },
+    {
+      "name": "verbose"
+    }
+  ],
+  "commands": [
+    {
+      "name": "service",
+      "description": "Manage services",
+      "options": [
+        {
+          "name": "help-service",
+          "description": "Service specific help"
+        }
+      ],
+      "subcommands": [
+        {
+          "name": "create",
+          "description": "Create a service",
+          "options": [
+            {
+              "name": "name"
+            }
+          ]
+        },
+        {
+          "name": "list",
+          "description": "List all services",
+          "options": [
+            {
+              "name": "json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "acl",
+      "description": "Manage ACLs",
+      "options": [
+        {
+          "name": "help-acl",
+          "description": "ACL specific help"
+        }
+      ],
+      "subcommands": [
+        {
+          "name": "create",
+          "description": "Create an ACL",
+          "options": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "address"
+            }
+          ]
+        },
+        {
+          "name": "list",
+          "description": "List all ACLs",
+          "options": [
+            {
+              "name": "json"
+            }
+          ],
+          "subcommands": [
+            {
+              "name": "third-level",
+              "description": "A third level command",
+              "options": [
+                {
+                  "name": "foo"
+                },
+                {
+                  "name": "bar"
+                }
+              ],
+              "subcommands": [
+                {
+                  "name": "fourth-level",
+                  "description": "A fourth level command"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
