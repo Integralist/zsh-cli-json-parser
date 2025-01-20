@@ -68,7 +68,9 @@ You can plug this script into your zsh shell completion setup like so:
 
 > \[!NOTE\]
 > The following example is for setting up autocomplete for a binary called
-> `example` (which uses the `example.json` from this repo as its structure).
+> `example` (which uses the `example.json` from this repo as its structure). I
+> typically store these files in `$HOME/.zsh/`, so in this case it would be
+> stored as `$HOME/.zsh/_example`.
 
 ```zsh
 #compdef fastly
@@ -107,3 +109,25 @@ _example_bash_autocomplete() {
 }
 complete -F _example_bash_autocomplete example
 ```
+
+You'll then need to source the above `_example` script:
+
+```zsh
+dir_zsh="$HOME/.zsh"
+path_example_completion="$dir_zsh/_example"
+chmod +x $path_example_completion
+source "$path_example_completion"
+```
+
+I'm not sure how you have your Zsh autocomplete setup, but I need to add this
+custom directory to my `fpath`:
+
+```zsh
+fpath=($dir_zsh $fpath)
+```
+
+> \[!TIP\]
+> If you're looking for an example autocomplete setup, then view my [dot
+> files][1].
+
+[1]: https://github.com/Integralist/dotfiles/blob/main/.config/zsh/autocomplete.zsh
