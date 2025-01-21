@@ -94,7 +94,7 @@ _example_bash_autocomplete() {
     # echo "Calling get_cli_options with input_str: '$input_str'" >> /tmp/autocomplete-debug.log
 
     # Pass the reconstructed input string to get_cli_options
-    opts=$(get_cli_options "$HOME/.config/zsh/example.json" "$input_str")
+    opts=$(get_cli_options "$HOME/.zsh/example.json" "$input_str")
 
     # Log the result of get_cli_options
     # echo "opts: $opts" >> /tmp/autocomplete-debug.log
