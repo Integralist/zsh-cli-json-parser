@@ -14,6 +14,35 @@ returns the relevant subcommands and flag options:
 The [example.json](example.json) file demonstrates what structure is required to
 be passed to the `get_cli_options` shell function.
 
+## Schema Validation
+
+This repository includes a `schema.json` file which defines the expected
+structure of the JSON file.
+
+You can validate your JSON file (e.g. `example.json`) against the schema by
+running the following command:
+
+```sh
+make validate_schema
+```
+
+> [!NOTE]
+> This requires `npx` to be available in your environment (which is included
+> with a standard Node.js installation).
+
+## Test Suite
+
+This repository includes a test suite in `test.zsh` to verify the behavior of
+the `get_cli_options.zsh` script. The tests ensure that the script correctly
+parses the `example.json` file and returns the expected commands and options for
+various inputs, matching the examples shown in the "Example Output" section.
+
+You can run the test suite with the following command:
+
+```sh
+make test
+```
+
 ## Example Output
 
 Using `example.json` as our example structure, we should see the following
