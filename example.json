@@ -1,13 +1,16 @@
 {
   "options": [
     {
-      "name": "help"
+      "name": "help",
+      "description": "Show context-sensitive help."
     },
     {
-      "name": "quiet"
+      "name": "quiet",
+      "description": "Suppress all output."
     },
     {
-      "name": "verbose"
+      "name": "verbose",
+      "description": "Enable verbose logging."
     }
   ],
   "commands": [
@@ -26,7 +29,8 @@
           "description": "Create a service",
           "options": [
             {
-              "name": "name"
+              "name": "name",
+              "description": "The name of the service to create."
             }
           ]
         },
@@ -35,7 +39,8 @@
           "description": "List all services",
           "options": [
             {
-              "name": "json"
+              "name": "json",
+              "description": "Output in JSON format."
             }
           ]
         }
@@ -56,10 +61,12 @@
           "description": "Create an ACL",
           "options": [
             {
-              "name": "name"
+              "name": "name",
+              "description": "The name of the ACL to create."
             },
             {
-              "name": "address"
+              "name": "address",
+              "description": "The IP address for the ACL."
             }
           ]
         },
@@ -68,7 +75,8 @@
           "description": "List all ACLs",
           "options": [
             {
-              "name": "json"
+              "name": "json",
+              "description": "Output in JSON format."
             }
           ],
           "subcommands": [

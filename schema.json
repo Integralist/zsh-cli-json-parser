@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CLI Structure",
+  "description": "A schema for defining the commands, subcommands, and options of a command-line interface.",
+  "type": "object",
+  "properties": {
+    "options": {
+      "description": "Global options available for the CLI.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/option" }
+    },
+    "commands": {
+      "description": "Top-level commands for the CLI.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/command" }
+    }
+  },
+  "required": ["options", "commands"],
+  "$defs": {
+    "option": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the option (e.g., 'help')."
+        },
+        "description": {
+          "type": "string",
+          "description": "A brief description of what the option does."
+        }
+      },
+      "required": ["name"]
+    },
+    "command": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the command (e.g., 'service')."
+        },
+        "description": {
+          "type": "string",
+          "description": "A brief description of what the command does."
+        },
+        "options": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/option" }
+        },
+        "subcommands": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/command" }
+        }
+      },
+      "required": ["name"]
+    }
+  }
+}
